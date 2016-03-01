@@ -4,4 +4,8 @@
   <artifactId>ExpenseManager</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Expense Manager</name>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>ExpenseManagerEntity</module>
+  </modules>
 </project>
