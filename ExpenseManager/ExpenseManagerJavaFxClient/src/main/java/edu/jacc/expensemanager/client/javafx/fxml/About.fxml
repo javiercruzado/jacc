@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="120.0" prefWidth="240.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Label text="Expense Manager v 0.1" textFill="#b40000" textOverrun="CLIP" underline="true" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <Label text="By Javier A Cruzado." AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="40.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <effect>
+            <Reflection />
+         </effect>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </Label>
+   </children>
+</AnchorPane>
