@@ -36,6 +36,7 @@ public class ClientApp extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (Exception e) {
+			e.printStackTrace();
 			log.log(Level.SEVERE, e.getMessage());
 		}
 

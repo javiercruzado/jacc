@@ -16,10 +16,10 @@
 				<version>2.8</version>
 				<configuration>
 					<modules>
-						<ejbModule>
+						<webModule>
 							<groupId>edu.jacc</groupId>
 							<artifactId>ExpenseManagerRest</artifactId>
-						</ejbModule>
+						</webModule>
 					</modules>
 				</configuration>
 			</plugin>
@@ -30,7 +30,7 @@
 			<groupId>edu.jacc</groupId>
 			<artifactId>ExpenseManagerRest</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-			<type>ejb</type>
+			<type>war</type>
 		</dependency>
 	</dependencies>
 </project>

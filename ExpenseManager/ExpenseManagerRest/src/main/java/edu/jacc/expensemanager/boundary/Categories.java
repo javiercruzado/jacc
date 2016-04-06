@@ -1,8 +1,13 @@
 package edu.jacc.expensemanager.boundary;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
+import edu.jacc.expensemanager.entities.Category;
 
 /**
  * Session Bean implementation class Categories
@@ -17,7 +22,17 @@ public class Categories {
 	 * Default constructor.
 	 */
 	public Categories() {
-		// TODO Auto-generated constructor stub
+
+	}
+
+	public void persist(Category category) {
+		em.persist(category);
+	}
+
+	public List<Category> getCategories() {
+		TypedQuery<Category> query = em.createNamedQuery("Category.findAll", Category.class);
+		List<Category> results = query.getResultList();
+		return results;
 	}
 
 }

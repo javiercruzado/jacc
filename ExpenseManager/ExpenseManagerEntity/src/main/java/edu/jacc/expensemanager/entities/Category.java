@@ -2,35 +2,43 @@ package edu.jacc.expensemanager.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+import java.util.List;
 
 /**
  * The persistent class for the categories database table.
  * 
  */
 @Entity
-@Table(name="categories")
-@NamedQuery(name="Category.findAll", query="SELECT c FROM Category c")
+@Table(name = "categories")
+@NamedQuery(name = "Category.findAll", query = "SELECT c FROM Category c")
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Category implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "_id")
 	private int id;
 
 	private int color;
 
 	private Boolean demo;
 
-	@Column(name="NAME")
+	@NotEmpty
+	@Column(name = "NAME")
 	private String name;
 
 	private Short sort;
 
-	//bi-directional many-to-one association to Bill
-	@OneToMany(mappedBy="category")
+	// bi-directional many-to-one association to Bill
+	@OneToMany(mappedBy = "category")
 	private List<Bill> bills;
 
 	public Category() {
@@ -96,6 +104,12 @@ public class Category implements Serializable {
 		bill.setCategory(null);
 
 		return bill;
+	}
+
+	@Override
+	public String toString() {
+		//
+		return name;
 	}
 
 }
